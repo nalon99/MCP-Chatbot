@@ -1,3 +1,13 @@
+---
+title: TechStore Customer Support
+emoji: 🛒
+colorFrom: indigo
+colorTo: pink
+sdk: docker
+pinned: false
+license: mit
+---
+
 # MCP-Chatbot
 
 ## Example of a TechStore Customer Support Chatbot
@@ -67,9 +77,22 @@ mcp_chatbot/
 ├── mcp_client.py    # MCP server client
 ├── llm_handler.py   # OpenAI/OpenRouter LLM integration
 ├── requirements.txt # Python dependencies
+├── Dockerfile       # Docker config for HF Spaces
 ├── .env.example     # Environment variables template
+├── .gitignore       # Git ignore rules
 └── README.md        # This file
 ```
+
+## Deploy to Hugging Face Spaces
+
+1. Create a new Space at [huggingface.co/new-space](https://huggingface.co/new-space)
+2. Select **Docker** as the SDK
+3. Clone your Space repo and copy these files into it
+4. Go to **Settings → Variables and secrets** and add:
+   - `OPENAI_API_KEY` (as a secret)
+   - `OPENAI_MODEL` = `gpt-4o-mini`
+   - `MCP_SERVER_URL` = `https://vipfapwm3x.us-east-1.awsapprunner.com/mcp`
+5. Push to the Space repo and it will auto-deploy
 
 ## Tech Stack
 
