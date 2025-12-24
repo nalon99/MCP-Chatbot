@@ -14,6 +14,8 @@ license: mit
 
 A simple AI-powered customer support chatbot prototype using MCP (Model Context Protocol) for a computer products company.
 
+🚀 **Live Demo:** [huggingface.co/spaces/nalon99/MCP-Chatbot](https://huggingface.co/spaces/nalon99/MCP-Chatbot)
+
 ## Features
 
 - Chat interface for customer inquiries
@@ -109,3 +111,13 @@ mcp_chatbot/
 | `OPENAI_MODEL` | Model to use | `gpt-4o-mini` |
 | `USE_OPEN_ROUTER` | Use OpenRouter instead of OpenAI | `false` |
 | `MCP_SERVER_URL` | MCP server endpoint | `https://vipfapwm3x.us-east-1.awsapprunner.com/mcp` |
+
+## Known Limitations & Future Improvements
+
+| Issue | Solution |
+|-------|----------|
+| **Intermediate messages shown** - User sees "I'll look that up..." but final result may not appear | Wait for complete response before displaying; add loading spinner |
+| **No streaming** - User waits for full response | Implement SSE streaming for real-time token display |
+| **Silent errors** - Tool failures may not show | Add proper error handling with user-friendly messages |
+| **No conversation persistence** - Chat clears on refresh | Add session storage or database for chat history |
+| **Basic UI** - Simple text-only interface | Add markdown rendering, tables, and better formatting |
